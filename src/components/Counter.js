@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import App from '../App';
 
 function Counter() {
   const [count, setCount] = useState(0);
@@ -17,16 +18,16 @@ function Counter() {
 
   const handlerReset = () => {
     setCount(0)
-  }
-
-  const negativeValue = (count) => {
-    if (count === 0) {
-      return ("Count can't be less than zero.");
-    } else {
-      return count;
-    }
   };
 
+  const negativeValue = (count);
+  if (count < 0) {
+    alert ("Negative numbers are not allowed.")
+  } else if (count == (-1)) {
+    return (handlerReset);
+  }
+
+  
    return (
     <>
       <button onClick={handlerMinus}className="btn btn-primary btn-sm">-</button>
